@@ -10,7 +10,7 @@ class UserFactory{
         const lastName = user.name.last;
         const city = user.location.city;
         const state = user.location.state;
-        const profileImage = user.picture.thumbnail;
+        const profileImage = user.picture.large;
         const friendNames = friends.map(friend => friend.name.first + " " +friend.name.last);
         const pokemoneName = pokemone.name;
         const pokemoneSprite = pokemone.sprites.front_default;
@@ -18,3 +18,5 @@ class UserFactory{
         return new User(firstName, lastName, city, state, profileImage, friendNames, quote, pokemoneName, pokemoneSprite, ipsum)
     }
 }
+
+export default UserFactory
