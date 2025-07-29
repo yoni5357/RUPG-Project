@@ -1,5 +1,5 @@
 import DataProvider from "./dataProvider.js";
-import User from "./user.js";
+import User from "../user.js";
 
 class UserFactory{
     static async createUser(){
