@@ -17,6 +17,22 @@ class Renderer{
         locationP.className = 'info-text';
         infoDiv.appendChild(nameP);
         infoDiv.appendChild(locationP);
+
+        const quoteDiv = document.getElementById('quote-container');
+        quoteDiv.innerHTML = '';
+        const quoteP = document.createElement('p');
+        quoteP.className = 'quote';
+        quoteP.textContent = `Favorite quote: ${user.quote}`;
+        quoteDiv.appendChild(quoteP);
+
+        const pokemonDiv = document.getElementById('pokemon-container');
+        pokemonDiv.innerHTML = '';
+        const pokemonSprite = document.createElement('img');
+        pokemonSprite.src = user.pokemonUrl;
+        const pokemonName = document.createElement('p');
+        pokemonName.textContent = user.pokemonName;
+        pokemonDiv.appendChild(pokemonSprite);
+        pokemonDiv.appendChild(pokemonName);
     }
 }
 

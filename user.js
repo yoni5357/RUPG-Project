@@ -1,5 +1,5 @@
 class User{
-    constructor(firstName, lastName, city, state, imageUrl, friends, quote, pokemoneName, pokemoneUrl, ipsum){
+    constructor(firstName, lastName, city, state, imageUrl, friends, quote, pokemonName, pokemonUrl, ipsum){
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
@@ -7,8 +7,8 @@ class User{
         this.profileImage = imageUrl;
         this.friends = friends;
         this.quote = quote;
-        this.pokemoneName = pokemoneName;
-        this.pokemoneUrl = pokemoneUrl;
+        this.pokemonName = pokemonName;
+        this.pokemonUrl = pokemonUrl;
         this.ipsum = ipsum;
     }
 }
