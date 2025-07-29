@@ -51,3 +51,18 @@ async function fetchPokemone() {
     }
 
 }
+
+
+async function fetchMeatyIpsum() {
+    try{
+        const response = await fetch('https://baconipsum.com/api/?type=all-meat&paras=1');
+        if(!response.ok){
+            throw new Error('Ipsum Response not ok')
+        }
+        const ipsum = await response.json();
+        return ipsum[0];
+    }catch(error){
+        console.error("Failed to fetch Ipsum: ", error.message);
+    }
+
+}
