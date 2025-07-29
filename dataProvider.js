@@ -32,12 +32,7 @@ class DataProvider{
 
     static async fetchPokemone() {
         try{
-            const countResponse = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=1');
-            if(!countResponse.ok){
-                throw new Error('Count Response not ok');
-            }
-            const pokemoneCount = await countResponse.json();
-            const totalPokemone =  pokemoneCount.count;
+            const totalPokemone =  1000;
 
             const randomId = Math.floor(Math.random() * totalPokemone) + 1;
 
@@ -67,6 +62,26 @@ class DataProvider{
         }
 
     }
+
+    static async fetchAll(){
+        try{
+            const [users, quote, pokemone, ipsum] = await Promise.all([
+                this.fetchtUsers(),
+                this.fetchQuote(),
+                this.fetchPokemone(),
+                this.fetchMeatyIpsum()
+            ]);
+
+            return [users, quote, pokemone, ipsum];
+        }catch(error){
+            console.error("Failed to fetch all: ", error.message);
+        }
+
+    }
 }
+
+// DataProvider.fetchPokemone().then(console.log)
+// DataProvider.fetchAll().then(console.log);
+
 
 export default DataProvider;
