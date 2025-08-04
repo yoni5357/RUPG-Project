@@ -11,7 +11,7 @@ class Renderer{
         infoDiv.innerHTML = '';
         const nameP = document.createElement('p');
         nameP.textContent = `${user.firstName} ${user.lastName}`;
-        nameP.className = 'info-text';
+        nameP.className = 'info-name';
         const locationP = document.createElement('p');
         locationP.textContent = `${user.city}, ${user.state}`;
         locationP.className = 'info-text';
@@ -33,6 +33,15 @@ class Renderer{
         pokemonName.textContent = user.pokemonName;
         pokemonDiv.appendChild(pokemonSprite);
         pokemonDiv.appendChild(pokemonName);
+
+        const friendDiv = document.getElementById('friend-bar');
+        friendDiv.innerHTML = '';
+        user.friends.forEach(friend => {
+            const friendP = document.createElement('p');
+            friendP.textContent = friend;
+            friendP.className = 'friend-name';
+            friendDiv.appendChild(friendP);
+        });
     }
 }
 
