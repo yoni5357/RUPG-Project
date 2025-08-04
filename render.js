@@ -34,6 +34,13 @@ class Renderer{
         pokemonDiv.appendChild(pokemonSprite);
         pokemonDiv.appendChild(pokemonName);
 
+        const aboutDiv = document.getElementById('about-container');
+        aboutDiv.innerHTML = '';
+        const aboutP = document.createElement('p');
+        aboutP.textContent = user.ipsum;
+        aboutP.className = 'about-text';
+        aboutDiv.appendChild(aboutP);
+
         const friendDiv = document.getElementById('friend-bar');
         friendDiv.innerHTML = '';
         user.friends.forEach(friend => {
