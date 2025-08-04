@@ -63,6 +63,12 @@ main{
     color: #7F675B;
 }
 
+.pokemon-sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #friend-bar{
     width: 200px;
     height: 100%;

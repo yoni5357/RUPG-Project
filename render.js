@@ -36,12 +36,15 @@ class Renderer{
         const pokemonName = document.createElement('p');
         pokemonSprite.className = 'pokemon-sprite';
         pokemonName.className = 'pokemon-name';
+        const pokemonSubDiv = document.createElement('div');
+        pokemonSubDiv.className = 'pokemon-sub-container';
         const pokemonTitle = document.createElement('h2');
         pokemonTitle.textContent = 'Favorite Pokemon';
         pokemonName.textContent = user.pokemonName;
-        pokemonDiv.appendChild(pokemonSprite);
-        pokemonDiv.appendChild(pokemonName);
-        pokemonDiv.insertBefore(pokemonTitle, pokemonSprite);
+        pokemonSubDiv.appendChild(pokemonSprite);
+        pokemonSubDiv.appendChild(pokemonName);
+        pokemonDiv.appendChild(pokemonSubDiv);
+        pokemonDiv.insertBefore(pokemonTitle, pokemonSubDiv);
 
         const aboutDiv = document.getElementById('about-container');
         aboutDiv.innerHTML = '';
