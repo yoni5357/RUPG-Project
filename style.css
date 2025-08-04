@@ -12,12 +12,15 @@
 
 #info-container{
     color: #D6D5C9;
-    display: flex;
-    flex-direction: column;
 }
 .info-name {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
+}
+
+.info-location {
+    font-size: 24px;
+    color: #A9A9A9;
 }
 
 #image-container{
@@ -35,7 +38,7 @@
 main{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    height: 800px;
 }
 
 #content-container{
@@ -43,14 +46,28 @@ main{
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    justify-content: space-around;
     background-color: #D6D5C9;
+    /* background-color: #7F675B; */
     flex:1;
+    padding: 20px;
+}
+
+.container{
+    width: 80%;
+    max-width: 800px;
+    background-color: #F0F0F0;
+    /* background-color: #7F675B; */
+    padding: 20px;
+    border-radius: 10px;
+    color: #7F675B;
 }
 
 #friend-bar{
     width: 200px;
     height: 100%;
-    background-color: #0A100D;
+    font-size: 24px;
+    background-color: #7F675B;
     color: #D6D5C9;
     padding: 20px;
 }

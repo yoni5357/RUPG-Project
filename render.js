@@ -14,7 +14,7 @@ class Renderer{
         nameP.className = 'info-name';
         const locationP = document.createElement('p');
         locationP.textContent = `${user.city}, ${user.state}`;
-        locationP.className = 'info-text';
+        locationP.className = 'info-location';
         infoDiv.appendChild(nameP);
         infoDiv.appendChild(locationP);
 
@@ -55,6 +55,10 @@ class Renderer{
 
         const friendDiv = document.getElementById('friend-bar');
         friendDiv.innerHTML = '';
+        const friendTitle = document.createElement('h2');
+        friendTitle.textContent = 'Friends';
+        friendTitle.className = 'friend-title';
+        friendDiv.appendChild(friendTitle); 
         user.friends.forEach(friend => {
             const friendP = document.createElement('p');
             friendP.textContent = friend;
