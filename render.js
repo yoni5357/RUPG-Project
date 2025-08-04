@@ -1,12 +1,23 @@
 class Renderer{
     static render(user){
+        this.renderImage(user);
+        this.renderInfo(user);
+        this.renderQuote(user);
+        this.renderPokemon(user);
+        this.renderAbout(user);
+        this.renderFriends(user);
+    }
+
+    static renderImage(user) {
         const imageDiv = document.getElementById('image-container');
         imageDiv.innerHTML = '';
         const image = document.createElement('img');
         image.src = user.profileImage;
-        image.className = 'user-image'
+        image.className = 'user-image';
         imageDiv.appendChild(image);
+    }
 
+    static renderInfo(user){
         const infoDiv = document.getElementById('info-container');
         infoDiv.innerHTML = '';
         const nameP = document.createElement('p');
@@ -17,7 +28,9 @@ class Renderer{
         locationP.className = 'info-location';
         infoDiv.appendChild(nameP);
         infoDiv.appendChild(locationP);
+    }
 
+    static renderQuote(user) {
         const quoteDiv = document.getElementById('quote-container');
         quoteDiv.innerHTML = '';
         const quoteP = document.createElement('p');
@@ -27,7 +40,9 @@ class Renderer{
         quoteP.textContent = user.quote;
         quoteDiv.appendChild(quoteP);
         quoteDiv.insertBefore(quoteTitle, quoteP);
+    }
 
+    static renderPokemon(user) {
         const pokemonDiv = document.getElementById('pokemon-container');
         pokemonDiv.innerHTML = '';
         const pokemonSprite = document.createElement('img');
@@ -39,12 +54,14 @@ class Renderer{
         pokemonSubDiv.className = 'pokemon-sub-container';
         const pokemonTitle = document.createElement('h2');
         pokemonTitle.textContent = 'Favorite Pokemon';
-        pokemonName.textContent = user.pokemonName;
+        pokemonName.textContent = user.pokemonName.charAt(0).toUpperCase() + user.pokemonName.slice(1);
         pokemonSubDiv.appendChild(pokemonSprite);
         pokemonSubDiv.appendChild(pokemonName);
         pokemonDiv.appendChild(pokemonSubDiv);
         pokemonDiv.insertBefore(pokemonTitle, pokemonSubDiv);
+    }
 
+    static renderAbout(user) {
         const aboutDiv = document.getElementById('about-container');
         aboutDiv.innerHTML = '';
         const aboutP = document.createElement('p');
@@ -54,7 +71,9 @@ class Renderer{
         aboutP.className = 'about-text';
         aboutDiv.appendChild(aboutP);
         aboutDiv.insertBefore(aboutTitle, aboutP);
+    }
 
+    static renderFriends(user) {
         const friendDiv = document.getElementById('friend-bar');
         friendDiv.innerHTML = '';
         const friendTitle = document.createElement('h2');
