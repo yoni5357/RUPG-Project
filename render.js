@@ -21,7 +21,6 @@ class Renderer{
         const quoteDiv = document.getElementById('quote-container');
         quoteDiv.innerHTML = '';
         const quoteP = document.createElement('p');
-        quoteP.className = 'quote';
         quoteP.className = 'quote-text';
         const quoteTitle = document.createElement('h2');
         quoteTitle.textContent = 'Favorite Quote';
