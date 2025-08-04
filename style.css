@@ -86,11 +86,21 @@ main{
     flex:1;
 }
 
-#generate-button{
+#button-container{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn{
     background-color: #7F675B;
     color: #D6D5C9;
     border: none;
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
+}
+
+.btn:hover{
+    background-color:#0A100D;
 }
