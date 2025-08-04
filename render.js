@@ -22,24 +22,36 @@ class Renderer{
         quoteDiv.innerHTML = '';
         const quoteP = document.createElement('p');
         quoteP.className = 'quote';
-        quoteP.textContent = `Favorite quote: ${user.quote}`;
+        quoteP.className = 'quote-text';
+        const quoteTitle = document.createElement('h2');
+        quoteTitle.textContent = 'Favorite Quote';
+        quoteP.textContent = user.quote;
         quoteDiv.appendChild(quoteP);
+        quoteDiv.insertBefore(quoteTitle, quoteP);
 
         const pokemonDiv = document.getElementById('pokemon-container');
         pokemonDiv.innerHTML = '';
         const pokemonSprite = document.createElement('img');
         pokemonSprite.src = user.pokemonUrl;
         const pokemonName = document.createElement('p');
+        pokemonSprite.className = 'pokemon-sprite';
+        pokemonName.className = 'pokemon-name';
+        const pokemonTitle = document.createElement('h2');
+        pokemonTitle.textContent = 'Favorite Pokemon';
         pokemonName.textContent = user.pokemonName;
         pokemonDiv.appendChild(pokemonSprite);
         pokemonDiv.appendChild(pokemonName);
+        pokemonDiv.insertBefore(pokemonTitle, pokemonSprite);
 
         const aboutDiv = document.getElementById('about-container');
         aboutDiv.innerHTML = '';
         const aboutP = document.createElement('p');
+        const aboutTitle = document.createElement('h2');
+        aboutTitle.textContent = 'About Me';
         aboutP.textContent = user.ipsum;
         aboutP.className = 'about-text';
         aboutDiv.appendChild(aboutP);
+        aboutDiv.insertBefore(aboutTitle, aboutP);
 
         const friendDiv = document.getElementById('friend-bar');
         friendDiv.innerHTML = '';
